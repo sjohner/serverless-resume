@@ -29,6 +29,7 @@ exports.handler = async (event) => {
             let email = '';
             let message = '';
             let status = '';
+            let responseCode;
             console.log("request: " + JSON.stringify(event));
             
             // Parse request body

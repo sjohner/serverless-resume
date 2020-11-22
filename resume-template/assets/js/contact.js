@@ -35,27 +35,25 @@ function sendMessage(e) {
 		message : message
 	};
 
-	alert("I am about to POST this:\n\n" + JSON.stringify(data));
-
 	// Post the request to the API
 	$.ajax({
 		type: "POST",
-		url : "https://53955ql6d9.execute-api.eu-central-1.amazonaws.com/test/sendmail",
+		url : "<API Stage Invoke URL>/sendemail",
 		dataType: "json",
 		crossDomain: "true",
 		contentType: "application/json; charset=utf-8",
 		data: JSON.stringify(data), 
 		success: function () {
-			// clear form and show a success message
-			alert("Successfull");
+			// Clear form and show a success message
+			alert("Thank you for your message!");
 			document.getElementById("contact-form").reset();
 			location.reload();
 		},
 	  	error: function () {
-			// show an error message
+			// Show an error message
 			console.log(textStatus);
 			console.log(errorThrown)
-			alert("UnSuccessfull");
+			alert("Unfortunately an error occured. Please try again.");
 		  }
 	});
 }
