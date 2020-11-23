@@ -1,41 +1,17 @@
-// Taken from https://aws.amazon.com/blogs/architecture/create-dynamic-contact-forms-for-s3-static-websites-using-aws-lambda-amazon-api-gateway-and-amazon-ses/
-// and slightly adopted to match the resumé contact form we are using in this lab
-
-function sendMessage(e) {
-	e.preventDefault();
-	
-	// Do some basic input validation
-	if ($("#name").val()=="") {
-		alert ("Please enter your name");
-		return;
-	}
-	if ($("#subject").val()=="") {
-		alert ("Please enter a subjet to your message");
-		return;
-	}
-	if ($("#email").val()=="") {
-		alert ("Please enter your email address");
-		return;
-	}
-	var reemail = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
-	if (!reemail.test($("#email").val())) {
-		alert ("Please enter valid email address");
-		return;
-	}
-
-	// Get data entered and create data to send to the API
-	var name = $("#name").val();
-	var subject = $("#subject").val();
-	var email = $("#email").val();
-	var message = $("#message").val();
+function sendMessage(){
+    // Get data entered and create data to send to the API
+	var name = document.getElementById("name").value;
+	var subject = document.getElementById("subject").value;
+	var email = document.getElementById("email").value;
+	var message = document.getElementById("message").value;
 	var data = {
 		name : name,
 		subject : subject,
 		email : email,
 		message : message
-	};
-
-	// Post the request to the API
+    };
+    
+    // Post the request to the API
 	$.ajax({
 		type: "POST",
 		url : "<API Stage Invoke URL>/sendemail",
