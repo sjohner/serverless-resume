@@ -7,11 +7,11 @@ const SES = new AWS.SES();
 
 // Replace sender@example.com with your "From" address.
 // This address must be verified with Amazon SES.
-const sender = "Resume Website Contact Form <supremecommanderoftheempire@universe.net>";
+const sender = "Resume Website Contact Form <sender@example.com>";
 
 // Replace recipient@example.com with a "To" address. If your account 
 // is still in the sandbox, this address must be verified.
-const recipient = "supremecommanderoftheempire@universe.net";
+const recipient = "sender@example.com";
 
 // The character encoding for the email.
 const charset = "UTF-8";
