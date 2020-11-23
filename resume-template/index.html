@@ -110,7 +110,7 @@
 								<div class="container">
 									<h3>Contact Me</h3>
 									<p>Reach out to me if you have any question or if you need someone to build a death star.</p>
-									<form method="post" id="contact-form">
+									<form method="post" action="#" onSubmit="JavaScript:sendMessage()">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall"><input required type="text" name="name" id="name" placeholder="Name" /></div>
 											<div class="col-6 col-12-xsmall"><input required type="email" name="email" id="email" placeholder="Email" /></div>
@@ -118,7 +118,7 @@
 											<div class="col-12"><textarea required name="message" id="message" placeholder="Message" rows="6"></textarea></div>
 											<div class="col-12">
 												<ul class="actions">
-													<li><input type="submit" onClick="sendMessage(event)" class="primary" value="Send Message" /></li>
+													<li><input type="submit" class="primary" value="Send Message" /></li>
 													<li><input type="reset" value="Reset Form" /></li>
 												</ul>
 											</div>
