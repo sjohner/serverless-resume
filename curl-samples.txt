@@ -20,4 +20,4 @@ curl -v -X POST \
 curl -v -X POST "<API Stage Invoke URL>/helloworld?name=John&city=Seattle" -H "content-type: application/json" -H "day: Thursday" -d "{ \"time\": \"evening\" }"
 
 # Test sendemail API endpoint
-curl -v -X POST "<API Stage Invoke URL>/sendemail -H "content-type: application/json" -d "{"name": "Hans Müller","email": "hans@mueller.ch","subject": "Get in contact","message": "Hi there"}"
+curl -v -X POST "<API Stage Invoke URL>/sendemail" -H "content-type: application/json" -d "{"name": "Hans Müller","email": "hans@mueller.ch","subject": "Get in contact","message": "Hi there"}"
