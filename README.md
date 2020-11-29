@@ -64,10 +64,8 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 The walkthrough mentioned above is using _example.com_ as the name for the S3 bucket. To ensure you can better identify the correct resources later on in the lab, **please make sure you name your S3 bucket according to the following convention:**
 
 ```
-powercoders-resume-<firstname><lastname>
+(e.g. powercoders-resume-darthvader) powercoders-resume-<firstname><lastname> 
 ```
-
-(e.g. powercoders-resume-darthvader)
 
 🚨 Some hints regarding the walkthrough:
 
@@ -91,10 +89,8 @@ You can use [this walkthrough](https://docs.aws.amazon.com/AmazonS3/latest/dev/L
 The walkthrough mentioned above is using _logs.example.com_ as the name for the S3 bucket. To ensure you can better identify the correct resources later on in the lab, **please make sure you name your S3 bucket according to the following convention:**
 
 ```
-powercoders-accesslogs-<firstname><lastname>
+powercoders-accesslogs-<firstname><lastname> (e.g. powercoders-accesslogs-darthvader)
 ```
-
-(e.g. powercoders-accesslogs-darthvader)
 
 🚨 Some hints regarding the walkthrough:
 
@@ -109,8 +105,6 @@ Add the resources you created to the spreadsheet.
 The S3 website URL should use HTTPS for security. Since S3 does not support HTTPS connections out of the box you will need to use [Amazon CloudFront ](https://aws.amazon.com/cloudfront/)to help with this
 
 You might want to complete the following training sessions to get some basic understanding of Amazon CloudFront and HTTPS
-
-
 
 *   [What is HTTPS](https://www.cloudflare.com/learning/ssl/what-is-https/)
 *   [Introduction to Amazon CloudFront](https://www.aws.training/Details/Video?id=15891) - 10min
@@ -141,7 +135,6 @@ Add the resources you created to the spreadsheet and post the CloudFront URL on 
 
 🥳 Congratulations, you built your first static website using Amazon S3!
 
-
 # Step 5 - Send emails using Amazon SES
 
 Now that you published your resume, you need a way to get in contact with you. This is where [Amazon SES](https://aws.amazon.com/ses/) comes into play. Amazon Simple Email Service (SES) is a flexible and scalable email service that enables you to send mail from within any application.
@@ -169,13 +162,9 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 
 The walkthrough mentioned above is using_ GetStartedLambdaProxyIntegration_ as the name for the Lambda function and _LambdaSimpleProxy_ as the name for the API Gateway. To ensure you can better identify the correct resources later on in the lab, **please make sure you name your Lambda function according to the following convention:**
 
-Lambda function: `powercoders-helloworld-&lt;firstname>&lt;lastname>`
+Lambda function: `powercoders-helloworld-&lt;firstname>&lt;lastname> (e.g. powercoders-helloworld-darthvader)`
 
-(e.g. powercoders-helloworld-darthvader)
-
-API Gateway: `powercoders-resumecontact-&lt;firstname>&lt;lastname>`
-
-(e.g powercoders-resumecontact-darthvader)
+API Gateway: `powercoders-resumecontact-&lt;firstname>&lt;lastname> (e.g powercoders-resumecontact-darthvader)`
 
 🚨 Some hints regarding the walkthrough:
 
@@ -195,10 +184,8 @@ Now that you have a working Hello World sample for a REST API with Lambda functi
 Leave the existing Hello World example as is but create another Lambda function as you did in the previous step. This time, name it according to the following convention:
 
 ```
-powercoders-sendemail-<firstname><lastname>
+powercoders-sendemail-<firstname><lastname> (e.g. powercoders-sendemail-darthvader)
 ```
-
-(e.g. powercoders-sendemail-darthvader)
 
 Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/sendmail.js). Make sure you change the following:
 
