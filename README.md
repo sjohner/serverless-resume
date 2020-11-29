@@ -38,7 +38,7 @@ First of all you need a resume. Some great examples of static websites built wit
 
 This lab is based on the [Read Only template from HTML5 UP](https://html5up.net/read-only) so it is recommended to use this one. The template contains a simple contact form which you are going to use later on.
 
-Download the above mentioned template and adopt it to represent your resumé. You might want to add a profile pic and some basic information about you.
+Download the above mentioned template and adopt it to represent your resume. You might want to add a profile pic and some basic information about you.
 
 Adjust the _index.html_ file accordingly and replace the images in the _images_ folder if you want to. To check out your work you can launch index.html in your browser on your local machine.
 
@@ -50,7 +50,7 @@ To modify the template you can use whatever text editor you have. There are plen
 Don’t spend too much time on your resume. It just serves as an example and you can still tweak it later on when it is online.
 
 
-# Step 2 - Deploy your resumé online
+# Step 2 - Deploy your resume online
 
 Deploy your resume online as an [Amazon S3 static website](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html).
 
@@ -64,7 +64,7 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 The walkthrough mentioned above is using _example.com_ as the name for the S3 bucket. To ensure you can better identify the correct resources later on in the lab, **please make sure you name your S3 bucket according to the following convention:**
 
 ```
-(e.g. powercoders-resume-darthvader) powercoders-resume-<firstname><lastname> 
+powercoders-resume-<firstname><lastname> (e.g. powercoders-resume-darthvader)
 ```
 
 🚨 Some hints regarding the walkthrough:
@@ -73,7 +73,7 @@ The walkthrough mentioned above is using _example.com_ as the name for the S3 bu
 *   When adding the bucket policy which makes your bucket publicly accessible, make sure you replace _example.com_ with the name of your bucket. Otherwise you will see an error that says `Policy has invalid resource`
 *   In Step 5 of the walkthrough you do not have to create an index.html file since you already created your resume website in step 1 of this lab. Just upload the content of your website folder including all subfolders
 
-Add the resources you created to the spreadsheet and post the S3 Static Website URL where your resumé website is available in the Slack Channel.
+Add the resources you created to the spreadsheet and post the S3 Static Website URL where your resume website is available in the Slack Channel.
 
 If your resume is available online and you still want to explore Amazon S3 a little more you can 
 
@@ -131,7 +131,7 @@ You can now securely access your website using the domain name of the newly crea
 
 ![Cloud Front Distributions](images/CloudFront_Distributions.png)
 
-Add the resources you created to the spreadsheet and post the CloudFront URL on which your resumé website is available in the Slack Channel.
+Add the resources you created to the spreadsheet and post the CloudFront URL on which your resume website is available in the Slack Channel.
 
 🥳 Congratulations, you built your first static website using Amazon S3!
 
@@ -205,25 +205,25 @@ Now you should have two resources in your API. The sendemail resource needs some
 
 Once you created and deployed your API, you can now test if you can send emails by using the API.
 
-You can find examples for corresponding curl command on this [Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/curl-samples.txt)
+You can find examples for corresponding curl command on this [Github repository](curl-samples.txt)
 
 # Step 8 - Add a contact form to your static website
 
 Congrats, you are almost done! Last thing you need is to enhance the contact form to your static website.
 
-To make your contact form work, you will need some JavaScript magic which sends the form input to your API. You can find a sample JavaScript function [on this Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/resume-template/assets/js/contact.js).
+To make your contact form work, you will need some JavaScript magic which sends the form input to your API. You can find a sample JavaScript function [here](darthvader-resume-template/assets/js/contact.js).
 
 Copy the `contact.js` file to the `asstes/js` folder within your website project.
 
-For the JavaScript code to work you need to do some minor tweaks in your index.html:
+For the JavaScript code to work you need to do some minor tweaks in your index.html. See [here](darthvader-resume-template/index.html) for a complete sample of `index.html`.
 
 *   Add the path to the script in the scripts section at the end of index.html
-*   Add `onSubmit="JavaScript:sendMessage()" `to the form definition to make sure that submitting the form sends the message
+*   Add `onSubmit="return sendMessage(event)"" `to the form definition to make sure that submitting the form sends the message
+*   Remove `method="post"` from the form definition
 
 Now that you have a working contact form, upload the newly created JavaScript file and the updated index.html file.
 
 🥳 Congratulations, you successfully completed this lab!
-
 
 # Bonus tasks
 
