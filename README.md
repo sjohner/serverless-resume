@@ -6,18 +6,9 @@ The solution will look similar to the following diagram. You will use Amazon S3 
 
 In order for the visitors to get in touch with you, you will need a contact form. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. An example of this can be found here [https://d1hv5lii4xzlzo.cloudfront.net/](https://d1hv5lii4xzlzo.cloudfront.net/)
 
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image1.png "image_tooltip")
-
-
+![alt_text](images/Lab_Overview.png "Lab Overview")
 
 ## Some important side notes
-
-
 
 *   Always select **region EU (Frankfurt) eu-central-1** to deploy your resource.
 *   There is a [Google Sheets document available](https://docs.google.com/spreadsheets/d/1gHl6J_weZPpGoVSe850mGb1zTAI5aH3rNVbWeCZVkx0/edit?usp=sharing) where you can document the resources you created in the AWS account. **Please add all the resources you create to the spreadsheet**
