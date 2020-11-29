@@ -6,7 +6,7 @@ The solution will look similar to the following diagram. You will use Amazon S3 
 
 In order for the visitors to get in touch with you, you will need a contact form. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. An example of this can be found here [https://d1hv5lii4xzlzo.cloudfront.net/](https://d1hv5lii4xzlzo.cloudfront.net/)
 
-![alt_text](images/Lab_Overview.png "Lab Overview")
+![Lab Overview](images/Lab_Overview.png)
 
 ## Some important side notes
 
