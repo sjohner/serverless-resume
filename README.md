@@ -18,8 +18,6 @@ In order for the visitors to get in touch with you, you will need a contact form
 
 If you want to get familiar with essential AWS concepts and services. There are plenty of free training sessions available on [AWS training and certification](https://aws.training) or Youtube. You will need a (free) Amazon account for this.
 
-
-
 *   [What is Cloud Computing?](https://youtu.be/dH0yz-Osy54) - 5min
 *   [What is AWS?](https://youtu.be/a9__D53WsUs) - 5min
 *   [How does Microsoft Azure Work](https://youtu.be/KXkBZCe699A) - 5min
@@ -46,8 +44,6 @@ Adjust the _index.html_ file accordingly and replace the images in the _images_ 
 
 To modify the template you can use whatever text editor you have. There are plenty of options out there which are free to use. Two great options to use are:
 
-
-
 *   [Visual Studio Code](https://code.visualstudio.com/)
 *   [Sublime Text](https://www.sublimetext.com/)
 
@@ -60,8 +56,6 @@ Deploy your resume online as an [Amazon S3 static website](https://docs.aws.amaz
 
 You might want to complete the following training sessions to get some basic understanding of Amazon Simple Storage Service
 
-
-
 *   [Introduction to Amazon Simple Storage Service (S3)](https://www.aws.training/Details/eLearning?id=32727) - 15min
 *   [Foundation of Amazon S3](https://www.aws.training/Details/eLearning?id=32728) - 35min
 
@@ -69,17 +63,13 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 
 The walkthrough mentioned above is using _example.com_ as the name for the S3 bucket. To ensure you can better identify the correct resources later on in the lab, **please make sure you name your S3 bucket according to the following convention:**
 
-
 ```
 powercoders-resume-<firstname><lastname>
 ```
 
-
 (e.g. powercoders-resume-darthvader)
 
 🚨 Some hints regarding the walkthrough:
-
-
 
 *   Use `index.html `and `error.html` for your index and error document.
 *   When adding the bucket policy which makes your bucket publicly accessible, make sure you replace _example.com_ with the name of your bucket. Otherwise you will see an error that says `Policy has invalid resource`
@@ -88,8 +78,6 @@ powercoders-resume-<firstname><lastname>
 Add the resources you created to the spreadsheet and post the S3 Static Website URL where your resumé website is available in the Slack Channel.
 
 If your resume is available online and you still want to explore Amazon S3 a little more you can 
-
-
 
 *   [Add a custom error document](https://docs.aws.amazon.com/AmazonS3/latest/dev/CustomErrorDocSupport.html) to further personalize your website
 
@@ -102,17 +90,13 @@ You can use [this walkthrough](https://docs.aws.amazon.com/AmazonS3/latest/dev/L
 
 The walkthrough mentioned above is using _logs.example.com_ as the name for the S3 bucket. To ensure you can better identify the correct resources later on in the lab, **please make sure you name your S3 bucket according to the following convention:**
 
-
 ```
 powercoders-accesslogs-<firstname><lastname>
 ```
 
-
 (e.g. powercoders-accesslogs-darthvader)
 
 🚨 Some hints regarding the walkthrough:
-
-
 
 *   When asked to create a folder for the log files, create one named `logs` for the S3 buckets logs and another one named `cdn `for the CloudFront logs. The cdn folder is used in the next step of this lab
 *   Access logging has to be activated on the previously created S3 bucket hosting your resume
@@ -135,24 +119,14 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 
 🚨 Some hints regarding the walkthrough:
 
-
-
 *   In Step 1 for the _Origin Domain Name_ select the correct S3 bucket you created in the previous step.
 *   When configuring _Default Cache Behaviour Settings _in Step 5 make sure that you select _Redirect HTTP to HTTPS_ for the Viewer Protocol Policy \
 
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image2.png "image_tooltip")
+![Cloud Front Viewer Protocol Policy Settings](images/CloudFront_ViewerProtocolPolicy.png)
 
 *   When configuring _Default Cache Behaviour Settings _in Step 5 make sure that you select _GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE_ as the _Allowed HTTP Methods_ \
 
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image3.png "image_tooltip")
+![Cloud Front Allowed HTTP Methods Settings](images/CloudFront_AllowedHTTPMethods.png)
 
 *   Skip steps 6a and 6b in the walkthrough since we are not working with custom domain names for now.
 *   When configuring _S3 Bucket for Logs _choose the S3 Log Bucket you created in the previous step.
@@ -161,13 +135,7 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 
 You can now securely access your website using the domain name of the newly created distribution point 👍
 
-
-
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image4.png "image_tooltip")
-
+![Cloud Front Distributions](images/CloudFront_Distributions.png)
 
 Add the resources you created to the spreadsheet and post the CloudFront URL on which your resumé website is available in the Slack Channel.
 
@@ -180,21 +148,16 @@ Now that you published your resume, you need a way to get in contact with you. T
 
 Setting up Amazon SES is quite simple:
 
-
-
 *   [Verify an email address in Amazon SES](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses-procedure.html) to which you want to send your emails. This is probably your own personal email address
 *   Check if you are able to send and receive emails by [using the Amazon SES console](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-an-email-from-console.html)
 
 Send a test email to one of your classmates and the teacher using the AWS SES console.
-
 
 # Step 6 - Create a Hello World REST API with Lambda and API Gateway
 
 To be able to POST your contact form content and trigger the sending of an email, you will need to build a corresponding REST API. This can be done using AWS Lambda and Amazon API Gateway.
 
 You might want to complete the following training sessions to get some basic understanding of AWS Lambda and Amazon API Gateway
-
-
 
 *   [What is REST](https://www.codecademy.com/articles/what-is-rest)
 *   [Introduction to AWS Lambda](https://www.aws.training/Details/Video?id=16360) - 10min
@@ -216,21 +179,14 @@ API Gateway: `powercoders-resumecontact-&lt;firstname>&lt;lastname>`
 
 🚨 Some hints regarding the walkthrough:
 
-
-
 *   Use `Node.js 12.x `as runtime.
-*   When asked to create a new role instead _Use an existing role_ and select the role `powercocers-resumelab-lambdaexecutionrole \
-`
+*   When asked to create a new role instead _Use an existing role_ and select the role `powercocers-resumelab-lambdaexecutionrole`
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image5.png "image_tooltip")
+![Lambda Execution Roles](images/Lambda_Permissions.png)
 
 *   Don't forget to hit _Deploy_ after every change to the Function code.
 
 Add the resources you created to the spreadsheet and post the corresponding URL where your Hello World REST API can be invoked in the Slack Channel.
-
 
 # Step 7 - Send emails using AWS Lambda and API Gateway
 
@@ -238,17 +194,13 @@ Now that you have a working Hello World sample for a REST API with Lambda functi
 
 Leave the existing Hello World example as is but create another Lambda function as you did in the previous step. This time, name it according to the following convention:
 
-
 ```
 powercoders-sendemail-<firstname><lastname>
 ```
 
-
 (e.g. powercoders-sendemail-darthvader)
 
 Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/sendmail.js). Make sure you change the following:
-
-
 
 *   The sender and recipient address need to match with the email address you registered with Amazon SES.
 *   Change the _Access-Control-Allow-Origin _header to match with our CloudFront URL. This is necessary because the function is called from another origin. See [What is CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) for more information. HTTPS?
@@ -259,8 +211,6 @@ Get back to the walkthrough and create a new resource (Step 4 in the _Create a "
 
 Now you should have two resources in your API. The sendemail resource needs some methods. But instead of adding an _ANY_ method to the new resource, add the following methods for your _sendemail_ resource:
 
-
-
 *   OPTIONS
 *   POST
 
@@ -269,7 +219,6 @@ Now you should have two resources in your API. The sendemail resource needs some
 Once you created and deployed your API, you can now test if you can send emails by using the API.
 
 You can find examples for corresponding curl command on this [Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/curl-samples.txt)
-
 
 # Step 8 - Add a contact form to your static website
 
@@ -280,8 +229,6 @@ To make your contact form work, you will need some JavaScript magic which sends 
 Copy the `contact.js` file to the `asstes/js` folder within your website project.
 
 For the JavaScript code to work you need to do some minor tweaks in your index.html:
-
-
 
 *   Add the path to the script in the scripts section at the end of index.html
 *   Add `onSubmit="JavaScript:sendMessage()" `to the form definition to make sure that submitting the form sends the message
