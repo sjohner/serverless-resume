@@ -1,35 +1,34 @@
-function sendMessage(){
+function sendMessage(event){
+	//event.preventDefault;
     // Get data entered and create data to send to the API
 	var name = document.getElementById("name").value;
 	var subject = document.getElementById("subject").value;
 	var email = document.getElementById("email").value;
 	var message = document.getElementById("message").value;
-	var data = {
+	var formData = {
 		name : name,
 		subject : subject,
 		email : email,
 		message : message
-    };
-    
-    // Post the request to the API
+	};
+
+	// Post the request to the API
 	$.ajax({
+		url : "/rest/contact/",
 		type: "POST",
-		url : "<API Stage Invoke URL>/sendemail",
-		dataType: "json",
-		crossDomain: "true",
 		contentType: "application/json; charset=utf-8",
-		data: JSON.stringify(data), 
-		success: function () {
-			// Clear form and show a success message
-			alert("Thank you for your message!");
-			document.getElementById("contact-form").reset();
-			location.reload();
-		},
-	  	error: function () {
-			// Show an error message
-			console.log(textStatus);
-			console.log(errorThrown)
-			alert("Unfortunately an error occured. Please try again.");
-		  }
+		//dataType: "json",
+		data: JSON.stringify(formData),
+		cache: false
+	})
+	// using the done promise callback
+	.done(function(data) {
+		console.log('complete done');
+		// log data to the console so we can see
+		console.log(data);
+		$('form').html('<div class="alert alert-success">' + data.status + '</div>');
 	});
+
+	// stop the form from submitting the normal way and refreshing the page
+	event.preventDefault();
 }
