@@ -2,17 +2,16 @@
 
 The goal is to create your very own resume and publish it as a public website. For this you are going to use AWS serverless technologies.
 
-The solution will look similar to the following diagram. You will use Amazon S3 storage and CloudFront to serve your static site.
+The solution will look similar to the following diagram. You will use Amazon S3 static website storage to publish your static site. By using CloudFront, your newly created resume website will be delivered more locally to consumers, thus improving access speed for downloading the content. A nice side effect is that it allows you to securely deliver your website via SSL.
 
-In order for the visitors to get in touch with you, you will need a contact form. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. An example of this can be found here [https://d1hv5lii4xzlzo.cloudfront.net/](https://d1hv5lii4xzlzo.cloudfront.net/)
+In order for the visitors to get in touch with you, you will need a contact form. Since S3 static website storage does not allow dynamic content, you will make use of AWS Lambda functions to provide this functionality. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. Sending the email is done by using Amazon Simple Email Service. Check out an example of a resume webiste if you want to see it in action.  [https://d1hv5lii4xzlzo.cloudfront.net/](https://d1hv5lii4xzlzo.cloudfront.net/)
 
 ![Lab Overview](images/Lab_Overview.png)
 
 ## Some important side notes
 
-*   Always select **region EU (Frankfurt) eu-central-1** to deploy your resource.
-*   There is a [Google Sheets document available](https://docs.google.com/spreadsheets/d/1gHl6J_weZPpGoVSe850mGb1zTAI5aH3rNVbWeCZVkx0/edit?usp=sharing) where you can document the resources you created in the AWS account. **Please add all the resources you create to the spreadsheet**
-
+* Since your accounts are only allowed to create resources in the EU (Frankfurt) eu-central-1 region, make sure you change the region accordingly. Always select **region EU (Frankfurt) eu-central-1** to deploy your resource.
+* Students cannot create or modify identity and access related configuration in the Powercoders AWS account. Therefor the necessary Lambda execution roles required to complete this lab have already been created for you. In case you are working on this lab in your own AWS account you will need to create the corresponding Lambda execution role and assign it the corresponding policies to access CloudWatch and Amazon SES.
 
 ## More information about Cloud and AWS
 
@@ -20,27 +19,20 @@ If you want to get familiar with essential AWS concepts and services. There are 
 
 *   [What is Cloud Computing?](https://youtu.be/dH0yz-Osy54) - 5min
 *   [What is AWS?](https://youtu.be/a9__D53WsUs) - 5min
-*   [How does Microsoft Azure Work](https://youtu.be/KXkBZCe699A) - 5min
-*   [Inside a Google Datacenter](https://youtu.be/XZmGGAbHqa0) - 5min
 *   [AWS Foundations: Getting Started with the AWS Cloud Essentials](https://www.aws.training/Details/Video?id=49639) - 1h
 
 Login with your AWS credentials and get familiar with the [AWS console](https://powercoders.signin.aws.amazon.com/console?region=eu-central-1).
 
-🚨 Since your accounts are only allowed to create resources in the EU (Frankfurt) eu-central-1 region, make sure you change the region accordingly.
-
-Let me know if you were able to login and browse the AWS console. [This guide will help you to get started with the AWS console.](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/getting-started.html)
-
+Let the teacher know if you were able to login and browse the AWS console. Check out [this guide](https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/getting-started.html) which will help you to get started with the AWS console.
 
 # Step 1 - Create your HTML resume
 
 First of all you need a resume. Some great examples of static websites built with HTML and CSS can be found [here](https://html5up.net/). All the templates you find there are 100% Free under the \
-[Creative Commons](https://html5up.net/license) license This means you may use them but you need to give HTML5 UP credit for the design. There is a note in the footer section of the website that mentions HTML5 UP. Just leave it as is and you are done with attribution.
+[Creative Commons](https://html5up.net/license) license. This means you may use them but you need to give HTML5 UP credit for the design. There is a note in the footer section of the website that mentions HTML5 UP.
 
 This lab is based on the [Read Only template from HTML5 UP](https://html5up.net/read-only) so it is recommended to use this one. The template contains a simple contact form which you are going to use later on.
 
-Download the above mentioned template and adopt it to represent your resume. You might want to add a profile pic and some basic information about you.
-
-Adjust the _index.html_ file accordingly and replace the images in the _images_ folder if you want to. To check out your work you can launch index.html in your browser on your local machine.
+For this lab we will use a a slightly modified version of the above mentioned template and adopt it to represent your resume. You can download the template from [this github repository](darthvader-resume-template/). You might want to add a profile pic and some basic information about you. Adjust the _index.html_ file accordingly and replace the images in the _images_ folder if you want to. To check out your work you can launch index.html in your browser on your local machine.
 
 To modify the template you can use whatever text editor you have. There are plenty of options out there which are free to use. Two great options to use are:
 
@@ -48,7 +40,6 @@ To modify the template you can use whatever text editor you have. There are plen
 *   [Sublime Text](https://www.sublimetext.com/)
 
 Don’t spend too much time on your resume. It just serves as an example and you can still tweak it later on when it is online.
-
 
 # Step 2 - Deploy your resume online
 
@@ -73,12 +64,11 @@ powercoders-resume-<firstname><lastname> (e.g. powercoders-resume-darthvader)
 *   When adding the bucket policy which makes your bucket publicly accessible, make sure you replace _example.com_ with the name of your bucket. Otherwise you will see an error that says `Policy has invalid resource`
 *   In Step 5 of the walkthrough you do not have to create an index.html file since you already created your resume website in step 1 of this lab. Just upload the content of your website folder including all subfolders
 
-Add the resources you created to the spreadsheet and post the S3 Static Website URL where your resume website is available in the Slack Channel.
+Document the resources you created and let the teacher know the S3 Static Website URL where your resume website is available.
 
 If your resume is available online and you still want to explore Amazon S3 a little more you can 
 
 *   [Add a custom error document](https://docs.aws.amazon.com/AmazonS3/latest/dev/CustomErrorDocSupport.html) to further personalize your website
-
 
 # Step 3 - Logging web traffic
 
@@ -98,7 +88,6 @@ powercoders-accesslogs-<firstname><lastname> (e.g. powercoders-accesslogs-darthv
 *   Access logging has to be activated on the previously created S3 bucket hosting your resume
 
 Add the resources you created to the spreadsheet.
-
 
 # Step 4 - Enable HTTPS for your website
 
@@ -133,7 +122,7 @@ You can now securely access your website using the domain name of the newly crea
 
 Add the resources you created to the spreadsheet and post the CloudFront URL on which your resume website is available in the Slack Channel.
 
-🥳 Congratulations, you built your first static website using Amazon S3!
+🥳 Congratulations, you built your first static website using Amazon S3 and CloudFront!
 
 # Step 5 - Send emails using Amazon SES
 
@@ -162,20 +151,24 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 
 The walkthrough mentioned above is using_ GetStartedLambdaProxyIntegration_ as the name for the Lambda function and _LambdaSimpleProxy_ as the name for the API Gateway. To ensure you can better identify the correct resources later on in the lab, **please make sure you name your Lambda function according to the following convention:**
 
-Lambda function: `powercoders-helloworld-&lt;firstname>&lt;lastname> (e.g. powercoders-helloworld-darthvader)`
+Lambda function: `powercoders-helloworld-<firstname><lastname> (e.g. powercoders-helloworld-darthvader)`
 
-API Gateway: `powercoders-resumecontact-&lt;firstname>&lt;lastname> (e.g powercoders-resumecontact-darthvader)`
+API Gateway: `powercoders-resumecontact-<firstname><lastname> (e.g powercoders-resumecontact-darthvader)`
 
 🚨 Some hints regarding the walkthrough:
 
-*   Use `Node.js 12.x `as runtime.
-*   When asked to create a new role instead _Use an existing role_ and select the role `powercocers-resumelab-lambdaexecutionrole`
+* Use `Node.js 12.x `as runtime.
+* When asked to create a new role instead _Use an existing role_ and select the role `powercocers-resumelab-lambdaexecutionrole`. 
 
 ![Lambda Execution Roles](images/Lambda_Permissions.png)
 
-*   Don't forget to hit _Deploy_ after every change to the Function code.
+* Don't forget to hit _Deploy_ after every change to the Function code.
+* Make sure that instead of naming your API resource _helloworld_ you create a resource named _rest_ and the corresponding _helloworld_ resource as a child resource. You will need this _rest_ resource in the next steps of this lab. Your resources should look like the following
 
-Add the resources you created to the spreadsheet and post the corresponding URL where your Hello World REST API can be invoked in the Slack Channel.
+![API Gateway resources and methods](images/ApiGateway_Helloworld_Resource.png)
+* When deploying your API create a new deployment stage named _prod_ instead of _test_ as outlined in the walkthrough
+
+Document the resources you created let your teacher know the URL where your Hello World REST API can be invoked.
 
 # Step 7 - Send emails using AWS Lambda and API Gateway
 
@@ -190,24 +183,34 @@ powercoders-sendemail-<firstname><lastname> (e.g. powercoders-sendemail-darthvad
 Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/sendmail.js). Make sure you change the following:
 
 *   The sender and recipient address need to match with the email address you registered with Amazon SES.
-*   Change the _Access-Control-Allow-Origin _header to match with our CloudFront URL. This is necessary because the function is called from another origin. See [What is CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) for more information. HTTPS?
+*   Change the _Access-Control-Allow-Origin_ header to match with our CloudFront URL. This is necessary because the function is called from another origin. See [What is CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) for more information.
 
 After you created your new _sendemail_ function, you will have to extend the existing API Gateway with a new resource.
 
-Get back to the walkthrough and create a new resource (Step 4 in the _Create a "Hello, World!" API _section). Instead of naming it _helloworld_, this time name it _sendemail._
+Get back to the walkthrough and create a new resource (Step 4 in the _Create a "Hello, World!" API_ section) as a child of your existing _rest_ resource. Instead of naming it _helloworld_, this time name it _contact_.
 
-Now you should have two resources in your API. The sendemail resource needs some methods. But instead of adding an _ANY_ method to the new resource, add the following methods for your _sendemail_ resource:
+The contact resource needs some methods. But instead of adding an _ANY_ method to the new resource, add the following methods for your newly created _contact_ resource:
 
 *   OPTIONS
 *   POST
 
+Now you should have two resources within your _rest_ resource.
+
+![API Gateway resources and methods](images/ApiGateway_Contact_Resource.png)
+
 🚨 For both methods make sure that you integrate with the new sendemail Lambda function and that you check _Use Lambda Proxy integration_
 
-Once you created and deployed your API, you can now test if you can send emails by using the API.
+Once you created and deployed your API, you can now test if you can send emails by using the API. Sample commands for testing the API with curl can be found [here](https://gist.github.com/sjohner/6f521a7b262b1023ce21b9fca042fde9)
 
-You can find examples for corresponding curl command on this [Github repository](curl-samples.txt)
+# Step 8 - Additional CloudFront origin for the contact API
 
-# Step 8 - Add a contact form to your static website
+The HTML contact form and javascript to process will be served from your S3 bucket. The processing of the form will be forwarded to API Gateway. You will use a convention that anything under the path /rest/ will come from API Gateway. The default behavior will be to serve any other requests from our S3 bucket. To serve REST requests from API Gateway you are going to create a second Cloudfront origin.
+
+From the _Origins_ tab select _Create Origin_. Enter the domain name and path of your API Gateway and make sure to select _HTTPS only_ for _Origin Protocol Policy_.
+
+![CloudFront Origin](images/CloudFront_Origin.png)
+
+# Step 9 - Add a contact form to your static website
 
 Congrats, you are almost done! Last thing you need is to enhance the contact form to your static website.
 
