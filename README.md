@@ -113,11 +113,11 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 🚨 Some hints regarding the walkthrough:
 
 *   In Step 1 for the `Origin Domain Name` select the correct S3 bucket you created in the previous step.
-*   When configuring `Default Cache Behaviour Settings` in Step 5 make sure that you select `Redirect HTTP to HTTPS` for the `Viewer Protocol Policy` \
+*   When configuring `Default Cache Behaviour Settings` in Step 5 make sure that you select `Redirect HTTP to HTTPS` for the `Viewer Protocol Policy`
 
 ![Cloud Front Viewer Protocol Policy Settings](images/CloudFront_ViewerProtocolPolicy.png)
 
-*   When configuring `Default Cache Behaviour Settings` in Step 5 make sure that you select `GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE` as the `Allowed HTTP Methods` \
+*   When configuring `Default Cache Behaviour Settings` in Step 5 make sure that you select `GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE` as the `Allowed HTTP Methods`
 
 ![Cloud Front Allowed HTTP Methods Settings](images/CloudFront_AllowedHTTPMethods.png)
 
@@ -168,12 +168,12 @@ API Gateway: `powercoders-resumecontact-<firstname><lastname> (e.g powercoders-r
 🚨 Some hints regarding the walkthrough:
 
 * Use `Node.js 12.x `as runtime.
-* When asked to create a new role instead `Use an existing role` and select the role `powercocers-resumelab-lambdaexecutionrole`. \
+* When asked to create a new role instead `Use an existing role` and select the role `powercocers-resumelab-lambdaexecutionrole`.
 
 ![Lambda Execution Roles](images/Lambda_Permissions.png)
 
 * Don't forget to hit `Deploy` after every change to the Function code.
-* Make sure that instead of naming your first API resource `helloworld` you create a resource named `rest` and the corresponding `helloworld` resource as a child resource. You will need this `rest` resource later on in this lab. Your resources should look like the following. \
+* Make sure that instead of naming your first API resource `helloworld` you create a resource named `rest` and the corresponding `helloworld` resource as a child resource. You will need this `rest` resource later on in this lab. Your resources should look like the following.
 
 ![API Gateway resources and methods](images/ApiGateway_Helloworld_Resource.png)
 
