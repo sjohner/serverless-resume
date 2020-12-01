@@ -31,7 +31,7 @@ Let the teacher know if you were able to login and browse the AWS console. Check
 
 # Step 1 - Create your HTML resume
 
-First of all you need a resume. Some great examples of static websites built with HTML and CSS can be found [here](https://html5up.net/). All the templates you find there are 100% Free under the [Creative Commons](https://html5up.net/license) license. This means you may use the templates but you need to give HTML5 UP credit for the design. There is a note in the footer section of each template that mentions HTML5 UP.
+First of all you need a resume. Some great examples of static websites built with HTML and CSS can be found [here](https://html5up.net/). All the templates you find there are 100% Free under the [Creative Commons](https://html5up.net/license) license. This means you may use the templates but you need to give HTML5 UP credit for the design. There is a note in the footer section of each template that mentions HTML5 UP and a corresponding comment in the `index.html`file. Please do not remove those attributions or be sure to check out [Pixelarity](https://pixelarity.com/) which offers attribution-free usage of the template in exchange for a small amount of money.
 
 This lab is based on the [Read Only template from HTML5 UP](https://html5up.net/read-only) so it is recommended to use this one. The template is optimized for a personal website and contains a simple contact form which you are going to use later on.
 
