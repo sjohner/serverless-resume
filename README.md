@@ -32,7 +32,14 @@ First of all you need a resume. Some great examples of static websites built wit
 
 This lab is based on the [Read Only template from HTML5 UP](https://html5up.net/read-only) so it is recommended to use this one. The template contains a simple contact form which you are going to use later on.
 
-For this lab we will use a a slightly modified version of the above mentioned template and adopt it to represent your resume. You can download the template from [this github repository](darthvader-resume-template/). You might want to add a profile pic and some basic information about you. Adjust the _index.html_ file accordingly and replace the images in the _images_ folder if you want to. To check out your work you can launch index.html in your browser on your local machine.
+For this lab we will use a a slightly modified version of the above mentioned template and adopt it to represent your resume. You can download the template from [this github repository](darthvader-resume-template/).
+
+The following modifications were added to the template to match the requirements for this lab:
+* A [JavaScript function](darthvader-resume-template/assets/js/contact.js) was added which posts the message from the contact form to your API
+* A modified form  
+
+
+You might want to add a profile pic and some basic information about you. Adjust the _index.html_ file accordingly and replace the images in the _images_ folder if you want to. To check out your work you can launch index.html in your browser on your local machine.
 
 To modify the template you can use whatever text editor you have. There are plenty of options out there which are free to use. Two great options to use are:
 
@@ -204,7 +211,7 @@ Once you created and deployed your API, you can now test if you can send emails 
 
 # Step 8 - Additional CloudFront origin for the contact API
 
-The HTML contact form and javascript to process will be served from your S3 bucket. The processing of the form will be forwarded to API Gateway. You will use a convention that anything under the path /rest/ will come from API Gateway. The default behavior will be to serve any other requests from our S3 bucket. To serve REST requests from API Gateway you are going to create a second Cloudfront origin.
+The HTML contact form and the corresponding javascript to process will be served from your S3 bucket. However the processing of the form will be forwarded to your API Gateway. You will use a convention that anything under the path /rest/ will come from API Gateway. The default behavior will be to serve any other requests from our S3 bucket. To serve REST requests from API Gateway you are going to create a second Cloudfront origin.
 
 From the _Origins_ tab select _Create Origin_. Enter the domain name and path of your API Gateway and make sure to select _HTTPS only_ for _Origin Protocol Policy_.
 
@@ -234,4 +241,4 @@ Integrate a visitor counter on your website [using AWS Lambda and DynamoDB](http
 
 Add [Google reCaptcha](https://www.google.com/recaptcha/about/) to protect your website from abuse
 
-If you want to learn more about AWS you might want to check out the [AWS Cloud Practitioner Essentials](https://www.aws.training/Details/Curriculum?id=27076 ) training
+If you want to learn more about AWS you might want to check out the [AWS Cloud Practitioner Essentials](https://www.aws.training/Details/Curriculum?id=27076 ) training which prepares you for the [AWS Practitioner exam](https://aws.amazon.com/certification/certified-cloud-practitioner/).
