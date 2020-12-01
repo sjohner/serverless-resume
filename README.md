@@ -176,6 +176,7 @@ API Gateway: `powercoders-resumecontact-<firstname><lastname> (e.g powercoders-r
 * Make sure that instead of naming your first API resource `helloworld` you create a resource named `rest` and the corresponding `helloworld` resource as a child resource. You will need this `rest` resource later on in this lab. Your resources should look like the following. \
 
 ![API Gateway resources and methods](images/ApiGateway_Helloworld_Resource.png)
+
 * When deploying your API create a new deployment stage named _prod_ instead of _test_ as outlined in the walkthrough
 
 Document the resources you created let your teacher know the URL where your _Hello World_ REST API can be invoked.
@@ -226,9 +227,13 @@ You are almost done! Now you can test the contact form of your static website.
 
 Fill the form with some sample data and wait for the email to arrive in your inbox. You can use the [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) to check what is going on when submitting the form.
 
+You should see a nice green success message if your form was submitted successfully.
+
 ![Email sent successfully](images/Form_EmailSuccessful.png)
 
-![Email message example](images/Form_EmailReceived.png)
+And in your inbox you should see a new message.
+
+![Email message example](images/Form_MessageReceived.png)
 
 🥳 Congratulations, you successfully completed this lab and created your own resume website based on serverless technologies!
 
