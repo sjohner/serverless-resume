@@ -1,12 +1,16 @@
 # Introduction
 
-The goal is to create your very own resume and publish it as a public website. For this you are going to use AWS serverless technologies.
+The goal of this lab is to create your very own resume and publish it as a public website. For this you are going to use AWS serverless technologies.
 
 The solution will look similar to the following diagram. You will use Amazon S3 static website storage to publish your static site. By using CloudFront, your newly created resume website will be delivered more locally to consumers, thus improving access speed for downloading the content. A nice side effect is that it allows you to securely deliver your website via SSL.
 
-In order for the visitors to get in touch with you, you will need a contact form. Since S3 static website storage does not allow dynamic content, you will make use of AWS Lambda functions to provide this functionality. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. Sending the email is done by using Amazon Simple Email Service. Check out the [Darth Vader](https://darthvader.jhnr.ch) example resume website if you want to see it in action.
+In order for the visitors to get in touch with you, you will need a contact form. Since S3 static website storage does not allow dynamic content, you will make use of AWS Lambda functions to provide this functionality. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. Sending the email is done by using Amazon Simple Email Service. 
 
 ![Lab Overview](images/Lab_Overview.png)
+
+Check out the [Darth Vader](https://darthvader.jhnr.ch) example resume website if you want to see it in action.
+
+If you find any ambiguities, errors or typos, please open an issue. Or even better, correct the relevant files and create a pull request 😉
 
 ## Some important side notes
 
@@ -38,7 +42,7 @@ The following modifications were added to the template to match the requirements
 * The [form definition](https://github.com/sjohner/serverless-resume/blob/5d29ea0e909dedb80c385ade0ffcad6da20fd0bd/darthvader-resume-template/index.html#L113) was slightly modified to call the `sendMessage` function when a user submits the form
 * [All form fields](https://github.com/sjohner/serverless-resume/blob/5d29ea0e909dedb80c385ade0ffcad6da20fd0bd/darthvader-resume-template/index.html#L115-L118) are configured as required. When present, this attribute specifies that an input field must be filled out before submitting the form
 * The `contact.js` JavaScript file containing the `sendMessage` function is [included in the `index.html`file](https://github.com/sjohner/serverless-resume/blob/5d29ea0e909dedb80c385ade0ffcad6da20fd0bd/darthvader-resume-template/index.html#L150)
-* The [`form.css`CSS file]() containing the formatting for the form success message is [included in the `index.html`file]()
+* The [`form.css`CSS file](https://github.com/sjohner/serverless-resume/blob/main/darthvader-resume-template/assets/css/form.css) containing the formatting for the form success message is [included in the `index.html`file](https://github.com/sjohner/serverless-resume/blob/7370fea8918e44f87db50636cf707c10c716b42a/darthvader-resume-template/index.html#L13)
 
 You might want to add a profile pic and some basic information about you. Adjust the `index.html` file accordingly and replace the images in the `images` folder if you want to. To check out your work you can launch `index.html` in your browser on your local machine.
 
