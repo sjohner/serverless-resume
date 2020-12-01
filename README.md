@@ -4,7 +4,7 @@ The goal is to create your very own resume and publish it as a public website. F
 
 The solution will look similar to the following diagram. You will use Amazon S3 static website storage to publish your static site. By using CloudFront, your newly created resume website will be delivered more locally to consumers, thus improving access speed for downloading the content. A nice side effect is that it allows you to securely deliver your website via SSL.
 
-In order for the visitors to get in touch with you, you will need a contact form. Since S3 static website storage does not allow dynamic content, you will make use of AWS Lambda functions to provide this functionality. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. Sending the email is done by using Amazon Simple Email Service. Check out the [Darth Vader](https://darthvader.jhnr.ch) example resume webiste if you want to see it in action.
+In order for the visitors to get in touch with you, you will need a contact form. Since S3 static website storage does not allow dynamic content, you will make use of AWS Lambda functions to provide this functionality. Completing the form will trigger an AWS Lambda function which in turn sends you an email with the form content. Sending the email is done by using Amazon Simple Email Service. Check out the [Darth Vader](https://darthvader.jhnr.ch) example resume website if you want to see it in action.
 
 ![Lab Overview](images/Lab_Overview.png)
 
