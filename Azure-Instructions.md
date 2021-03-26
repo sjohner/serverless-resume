@@ -69,3 +69,60 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 Document the resources you created and let the teacher know the Static Website endpoint URL where your resume website is available.
 
 If your resume is available online you can add a custom `error.html` document to further personalize your website.
+
+# Step 3 - Create a SendGrid Account
+Now that you published your resume, you need a way to get in contact with you. This is where [SendGrid](https://sendgrid.com) comes into play. SendGrid is a flexible and scalable email service that enables you to send mail from within any application. With the SendGrid free tier you can send up to 100 emails/day for free.
+
+Setting up SendGrid is quite simple:
+
+*   [Create a SendGrid account](https://signup.sendgrid.com/) and verify an email address which you want to use to send your emails. This is probably your own personal email address
+*   [Create a SendGrid API key](https://sendgrid.com/docs/ui/account-and-settings/api-keys/). You will need this key to programmatically send emails via SendGrid.
+*   [Test your SendGrid API key](https://sendgrid.com/docs/ui/account-and-settings/api-keys/#testing-an-api-key). If everything works as expected you should get an email delivered to your inbox.
+
+# Step 4 - Create your first Azure Function
+
+Deploy an Azure Function to be able to send emails from the website contact form. The documentation [Azure Storage static website](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal).
+
+You might want to complete the following training sessions to get some basic understanding of Azure Storage Storage Service before starting with the actual deployment.
+
+*   [Introduction to Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) - 5min
+*   [Choose the best Azure service to automate your business processes](https://docs.microsoft.com/en-us/learn/modules/choose-azure-service-to-integrate-and-automate-business-processes/) - 45min
+
+Whenever you are ready, start creating your resources. You can use [this walkthrough](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal) to create your first function using the Azure portal. Test the function as outlined in the walkthrough to make sure everything works as expected before continuing with the next steps
+
+🚨 Some hints regarding the walkthrough:
+
+*   There is no need to change default settings for Networking, Data protection and Advanced options
+*   Use `index.html `and `error.html` for your index and error document.
+*   It is easier if you use Azure CLI or PowerShell to upload the website files. This way you can upload entire folders.
+
+Document the resources you created and let the teacher know the Static Website endpoint URL where your resume website is available.
+
+If your resume is available online you can add a custom `error.html` document to further personalize your website.
+
+# Step 5 - Send email using your Azure Function and SendGrid
+
+You successfully deployed an Azure Function and a SendGrid account. Now it is time to connect those two services to be able to send emails using your Azure Function.
+
+Deploy an Azure Function to be able to send emails from the website contact form. The documentation [Azure Storage static website](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal).
+
+You might want to complete the following training sessions to get some basic understanding of Azure Storage Storage Service before starting with the actual deployment.
+
+*   [Introduction to Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) - 5min
+*   [Choose the best Azure service to automate your business processes](https://docs.microsoft.com/en-us/learn/modules/choose-azure-service-to-integrate-and-automate-business-processes/) - 45min
+
+Whenever you are ready, start creating your resources. You can use [this walkthrough](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal) to create your first function using the Azure portal. Test the function as outlined in the walkthrough to make sure everything works as expected before continuing with the next steps
+
+🚨 Some hints regarding the walkthrough:
+
+*   There is no need to change default settings for Networking, Data protection and Advanced options
+*   Use `index.html `and `error.html` for your index and error document.
+*   It is easier if you use Azure CLI or PowerShell to upload the website files. This way you can upload entire folders.
+
+Document the resources you created and let the teacher know the Static Website endpoint URL where your resume website is available.
+
+If your resume is available online you can add a custom `error.html` document to further personalize your website.
+
+# Bonus tasks
+
+Deploy your static website with Github Actions https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions
