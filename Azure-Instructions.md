@@ -84,6 +84,7 @@ You might want to complete the following training sessions to get some basic und
 
 *   [Introduction to Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) - 5min
 *   [Choose the best Azure service to automate your business processes](https://docs.microsoft.com/en-us/learn/modules/choose-azure-service-to-integrate-and-automate-business-processes/) - 45min
+*   [Introduction to Serverless Computing with Azure](https://www.youtube.com/watch?v=4cQhVaXxLnk) - 45min
 
 Whenever you are ready, start creating your resources. You can use [this walkthrough](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal) to create your first function using the Azure portal. Test the function as outlined in the walkthrough to make sure everything works as expected before continuing with the next steps
 
