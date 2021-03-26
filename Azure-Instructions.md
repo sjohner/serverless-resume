@@ -12,7 +12,7 @@ If you find any ambiguities, errors or typos, please open an issue. Or even bett
 
 ## More information about Cloud and Azure
 
-If you want to get familiar with essential Azure concepts and services. There are plenty of free training sessions available on [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) or Youtube. You will need a (free) Azure account for this.
+If you want to get familiar with essential Azure concepts and services. There are plenty of free training sessions available on [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) or Youtube. You will need [a (free) Azure account](https://azure.microsoft.com/en-us/free/) for this.
 
 *   [What is Cloud Computing?](https://youtu.be/dH0yz-Osy54) - 5min
 *   [What is Microsoft Azure?](https://www.youtube.com/watch?v=KXkBZCe699A) - 5min
