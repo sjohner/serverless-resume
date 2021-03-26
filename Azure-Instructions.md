@@ -4,6 +4,8 @@ The goal of this lab is to create your very own resume and publish it as a publi
 
 The solution will look similar to the following diagram. You will use Azure Storage static website storage to publish your static site.
 
+![Azure Lab Overview](images/Azure_Lab_Overview.png)
+
 Check out the [Darth Vader](https://darthvader.jhnr.ch) example resume website if you want to see it in action.
 
 If you find any ambiguities, errors or typos, please open an issue. Or even better, correct the relevant files and create a pull request 😉
@@ -100,16 +102,29 @@ Modify your the existing function so that it can process the form output from yo
 *   Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/azure-sendmail.js).
 *   Make sure you change the sender and recipient address to match with the email address you registered with SendGrid
 
-🚨 Some hints regarding the walkthrough:
+# Step 6 - Make the contact form on your website work
 
-*   There is no need to change default settings for Networking, Data protection and Advanced options
-*   Use `index.html `and `error.html` for your index and error document.
-*   It is easier if you use Azure CLI or PowerShell to upload the website files. This way you can upload entire folders.
+You are almost done! Just some minor changes and your are done:
 
-Document the resources you created and let the teacher know the Static Website endpoint URL where your resume website is available.
+*   Add the URL of your Static Website Storage Account to the `CORS Settings` of your Function App. This is necessary because the function is called from another origin - your resume website. See [What is CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) for more detailed information about CORS.
+*   Add the URL of your function endpoint to [contact.js](https://github.com/sjohner/serverless-resume/blob/bdf5338c6b8e9e50b92f5d3d871bd5bbe7fb8f77/darthvader-resume-template/assets/js/contact.js#L17) to make sure the correct function is called when a user sends you a message
 
-If your resume is available online you can add a custom `error.html` document to further personalize your website.
+Now you can test the contact form of your static website.
+
+Fill the form with some sample data and wait for the email to arrive in your inbox. You can use the [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools) to check what is going on when submitting the form.
+
+You should see a nice green success message if your form was submitted successfully.
+
+![Email sent successfully](images/Form_EmailSuccessful.png)
+
+And in your inbox you should see a new message.
+
+![Email message example](images/Form_MessageReceived.png)
+
+🥳 Congratulations, you successfully completed this lab and created your own resume website based on serverless technologies!
+
 
 # Bonus tasks
 
-Deploy your static website with Github Actions https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions
+*   [Integrate your static website with Azure CDN](https://docs.microsoft.com/en-us/azure/storage/blobs/static-website-content-delivery-network)
+*   [Deploy your static website with Github Actions](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-static-site-github-actions)
