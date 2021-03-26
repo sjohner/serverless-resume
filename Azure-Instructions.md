@@ -12,7 +12,7 @@ If you find any ambiguities, errors or typos, please open an issue. Or even bett
 
 ## More information about Cloud and Azure
 
-If you want to get familiar with essential AWS concepts and services. There are plenty of free training sessions available on [AWS training and certification](https://aws.training) or Youtube. You will need a (free) Amazon account for this.
+If you want to get familiar with essential Azure concepts and services. There are plenty of free training sessions available on [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) or Youtube. You will need a (free) Azure account for this.
 
 *   [What is Cloud Computing?](https://youtu.be/dH0yz-Osy54) - 5min
 *   [What is Microsoft Azure?](https://www.youtube.com/watch?v=KXkBZCe699A) - 5min
@@ -88,13 +88,17 @@ You might want to complete the following training sessions to get some basic und
 
 Whenever you are ready, start creating your resources. You can use [this walkthrough](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal) to create your first function using the Azure portal. Test the function as outlined in the walkthrough to make sure everything works as expected before continuing with the next steps
 
+🚨 Some hints regarding the walkthrough:
+
+*   Choose Node.JS as your runtime stack and Windows as operating system
+
 # Step 5 - Send email using your Azure Function and SendGrid
 
 You successfully deployed an Azure Function and a SendGrid account. Now it is time to connect those two services to be able to send emails using your Azure Function.
 
 Modify your the existing function so that it can process the form output from your website contact form and send an email using SendGrid. You will need to make the following changes to your Functions
 
-*   Add the [SendGrid output binding](ocs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) to your function. Make sure you use the SendGrid API key generated in the previous steps
+*   Add the [SendGrid output binding](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) to your function. Make sure you use the SendGrid API key generated in the previous steps
 *   Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume/blob/main/azure_sendmail.js).
 *   Make sure you change the sender and recipient address to match with the email address you registered with SendGrid
 
