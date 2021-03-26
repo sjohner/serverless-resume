@@ -122,7 +122,7 @@ Once you changed the function code accordingly, you can test the function with t
 You are almost done! Just some minor changes and your are done:
 
 *   Add the URL of your Static Website Storage Account to the `CORS Settings` of your Function App. This is necessary because the function is called from another origin - your resume website. See [What is CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) for more detailed information about CORS.
-*   Add the URL of your function endpoint to [contact.js](https://github.com/sjohner/serverless-resume/blob/bdf5338c6b8e9e50b92f5d3d871bd5bbe7fb8f77/darthvader-resume-template/assets/js/contact.js#L17) to make sure the correct function is called when a user sends you a message
+*   Add the URL of your function endpoint to [contact.js](https://github.com/sjohner/serverless-resume/blob/e5a52a8e43287dd76fa4aff556248304eb6e890a/darthvader-resume-template/assets/js/contact.js#L18) to make sure the correct function is called when a user sends you a message
 
 Now you can test the contact form of your static website.
 
