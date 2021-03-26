@@ -13,8 +13,9 @@ function sendMessage(event){
 	};
 
 	// Post the request to the API
+	// Change the url to either /rest/contact/ for the AWS lab or to your function endpoint URL for the Azure lab
 	$.ajax({
-		url : "/rest/contact/",
+		url : "",
 		type: "POST",
 		contentType: "application/json; charset=utf-8",
 		//dataType: "json",
