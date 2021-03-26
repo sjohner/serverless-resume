@@ -10,11 +10,6 @@ Check out the [Darth Vader](https://darthvader.jhnr.ch) example resume website i
 
 If you find any ambiguities, errors or typos, please open an issue. Or even better, correct the relevant files and create a pull request 😉
 
-## Some important side notes
-
-* Since your accounts are only allowed to create resources in the EU (Frankfurt) eu-central-1 region, make sure you change the region accordingly. Always select **region EU (Frankfurt) eu-central-1** to deploy your resource.
-* Students cannot create or modify identity and access related configuration in the Powercoders AWS account. Therefor the necessary Lambda execution roles required to complete this lab have already been created for you. In case you are working on this lab in your own AWS account you will need to create the corresponding Lambda execution role and assign it the corresponding policies to access CloudWatch and Amazon SES.
-
 ## More information about Cloud and Azure
 
 If you want to get familiar with essential AWS concepts and services. There are plenty of free training sessions available on [AWS training and certification](https://aws.training) or Youtube. You will need a (free) Amazon account for this.
