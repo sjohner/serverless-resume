@@ -93,9 +93,24 @@ You successfully deployed an Azure Function and a SendGrid account. Now it is ti
 
 Modify your the existing function so that it can process the form output from your website contact form and send an email using SendGrid. You will need to make the following changes to your Functions
 
-*   Add the [SendGrid output binding](ocs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) to your function
+*   Add the [SendGrid output binding](ocs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) to your function. Make sure you use the SendGrid API key generated in the previous steps
 *   Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/azure-sendmail.js).
 *   Make sure you change the sender and recipient address to match with the email address you registered with SendGrid
+
+Once you changed the function code accordingly, you can test the function with the following input data
+
+```
+{
+  "name": "Hans Meier",
+  "subject": "Anfrage",
+  "email": "hans@gmail.com",
+  "message": "Hallo Velo"
+}
+```
+
+🚨 Some hints regarding the walkthrough:
+
+*   Make sure that you use the same parameter name as defined in the SendGrid Output Binding (Message Parameter Name). If you leave it default this should be `message`
 
 # Step 6 - Make the contact form on your website work
 
@@ -117,7 +132,6 @@ And in your inbox you should see a new message.
 ![Email message example](images/Form_MessageReceived.png)
 
 🥳 Congratulations, you successfully completed this lab and created your own resume website based on serverless technologies!
-
 
 # Bonus tasks
 
