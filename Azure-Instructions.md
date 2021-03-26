@@ -12,7 +12,7 @@ If you find any ambiguities, errors or typos, please open an issue. Or even bett
 
 ## More information about Cloud and Azure
 
-If you want to get familiar with essential AWS concepts and services. There are plenty of free training sessions available on [AWS training and certification](https://aws.training) or Youtube. You will need a (free) Amazon account for this.
+If you want to get familiar with essential Azure concepts and services. There are plenty of free training sessions available on [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) or Youtube. You will need [a (free) Azure account](https://azure.microsoft.com/en-us/free/) for this.
 
 *   [What is Cloud Computing?](https://youtu.be/dH0yz-Osy54) - 5min
 *   [What is Microsoft Azure?](https://www.youtube.com/watch?v=KXkBZCe699A) - 5min
@@ -84,8 +84,13 @@ You might want to complete the following training sessions to get some basic und
 
 *   [Introduction to Azure Functions](https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview) - 5min
 *   [Choose the best Azure service to automate your business processes](https://docs.microsoft.com/en-us/learn/modules/choose-azure-service-to-integrate-and-automate-business-processes/) - 45min
+*   [Introduction to Serverless Computing with Azure](https://www.youtube.com/watch?v=4cQhVaXxLnk) - 45min
 
 Whenever you are ready, start creating your resources. You can use [this walkthrough](https://docs.microsoft.com/en-us/azure/azure-functions/functions-create-function-app-portal) to create your first function using the Azure portal. Test the function as outlined in the walkthrough to make sure everything works as expected before continuing with the next steps
+
+🚨 Some hints regarding the walkthrough:
+
+*   Choose Node.JS as your runtime stack and Windows as operating system
 
 # Step 5 - Send email using your Azure Function and SendGrid
 
@@ -93,16 +98,31 @@ You successfully deployed an Azure Function and a SendGrid account. Now it is ti
 
 Modify your the existing function so that it can process the form output from your website contact form and send an email using SendGrid. You will need to make the following changes to your Functions
 
-*   Add the [SendGrid output binding](ocs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) to your function
-*   Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume-lab/blob/main/azure-sendmail.js).
+*   Add the [SendGrid output binding](https://docs.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings) to your function. Make sure you use the SendGrid API key generated in the previous steps
+*   Instead of using the function code provided in the tutorial, get the [code from this Github repository](https://github.com/sjohner/serverless-resume/blob/main/azure_sendmail.js).
 *   Make sure you change the sender and recipient address to match with the email address you registered with SendGrid
+
+Once you changed the function code accordingly, you can test the function with the following input data
+
+```
+{
+  "name": "Hans Meier",
+  "subject": "Anfrage",
+  "email": "hans@gmail.com",
+  "message": "Hallo Velo"
+}
+```
+
+🚨 Some hints regarding the walkthrough:
+
+*   Make sure that you use the same parameter name as defined in the SendGrid Output Binding (Message Parameter Name). If you leave it default this should be `message`
 
 # Step 6 - Make the contact form on your website work
 
 You are almost done! Just some minor changes and your are done:
 
 *   Add the URL of your Static Website Storage Account to the `CORS Settings` of your Function App. This is necessary because the function is called from another origin - your resume website. See [What is CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS) for more detailed information about CORS.
-*   Add the URL of your function endpoint to [contact.js](https://github.com/sjohner/serverless-resume/blob/bdf5338c6b8e9e50b92f5d3d871bd5bbe7fb8f77/darthvader-resume-template/assets/js/contact.js#L17) to make sure the correct function is called when a user sends you a message
+*   Add the URL of your function endpoint to [contact.js](https://github.com/sjohner/serverless-resume/blob/e5a52a8e43287dd76fa4aff556248304eb6e890a/darthvader-resume-template/assets/js/contact.js#L18) to make sure the correct function is called when a user sends you a message
 
 Now you can test the contact form of your static website.
 
@@ -117,7 +137,6 @@ And in your inbox you should see a new message.
 ![Email message example](images/Form_MessageReceived.png)
 
 🥳 Congratulations, you successfully completed this lab and created your own resume website based on serverless technologies!
-
 
 # Bonus tasks
 
