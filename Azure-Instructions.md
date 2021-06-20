@@ -10,12 +10,13 @@ Check out the [Darth Vader](https://darthvader.jhnr.ch) example resume website i
 
 If you find any ambiguities, errors or typos, please open an issue. Or even better, correct the relevant files and create a pull request 😉
 
-## More information about Cloud and Azure
+## Get familiar with Microsoft Azure Cloud
 
 If you want to get familiar with essential Azure concepts and services. There are plenty of free training sessions available on [Microsoft Learn](https://docs.microsoft.com/en-us/learn/) or Youtube. You will need [a (free) Azure account](https://azure.microsoft.com/en-us/free/) for this.
 
 *   [What is Cloud Computing?](https://youtu.be/dH0yz-Osy54) - 5min
 *   [What is Microsoft Azure?](https://www.youtube.com/watch?v=KXkBZCe699A) - 5min
+*   [Introduction to Azure Fundamentals](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-fundamentals/) - 40min
 *   [Azure Fundamentals part 1: Describe core Azure concepts](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/) - 1h
 
 Login with your Azure credentials and get familiar with the [Azure console](https://portal.azure.com).
