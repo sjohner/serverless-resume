@@ -17,6 +17,8 @@ If you want to get familiar with essential Azure concepts and services. There ar
 *   [What is Cloud Computing?](https://youtu.be/dH0yz-Osy54) - 5min
 *   [What is Microsoft Azure?](https://www.youtube.com/watch?v=KXkBZCe699A) - 5min
 *   [Introduction to Azure Fundamentals](https://docs.microsoft.com/en-us/learn/modules/intro-to-azure-fundamentals/) - 40min
+*   [Discuss Azure Fundamental Concepts](https://docs.microsoft.com/en-us/learn/modules/fundamental-azure-concepts/) - 25min
+*   [Describe Core Azure Architectural Components](https://docs.microsoft.com/en-us/learn/modules/azure-architecture-fundamentals/) - 30min
 *   [Azure Fundamentals part 1: Describe core Azure concepts](https://docs.microsoft.com/en-us/learn/paths/az-900-describe-cloud-concepts/) - 1h
 
 Login with your Azure credentials and get familiar with the [Azure console](https://portal.azure.com).
