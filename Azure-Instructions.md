@@ -64,7 +64,7 @@ Whenever you are ready, start creating your resources. You can use [this walkthr
 
 *   There is no need to change default settings for Networking, Data protection and Advanced options
 *   Use `index.html `and `error.html` for your index and error document.
-*   It is easier if you use Azure CLI or PowerShell to upload the website files. This way you can upload entire folders.
+*   It is easier if you use Azure CLI or PowerShell to upload the website files. This way you can upload entire folders. Get the Azure CLI from [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli)
 
 Document the resources you created and let the teacher know the Static Website endpoint URL where your resume website is available.
 
